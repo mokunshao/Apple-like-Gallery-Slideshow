@@ -1,8 +1,13 @@
+$('.menus>ul>li').eq(0).addClass('active').siblings().removeClass('active')
+
 let n = 0
 
 let menusLength = $('.menus>ul>li').length
 
-$('.menus>ul>li').eq(0).addClass('active').siblings().removeClass('active')
+let autoPlay = setInterval(function(){
+    $('.menus>ul>li').eq(n%menusLength).trigger('click')
+    n++
+},3000)
 
 $('.menus>ul>li').on('click',function(e){
     let current = e.currentTarget
@@ -11,11 +16,6 @@ $('.menus>ul>li').on('click',function(e){
     $('.pictures>img').css({transform:`translateX(${-920*index}px)`})
     n = index
 })
-
-let autoPlay = setInterval(function(){
-    $('.menus>ul>li').eq(n%menusLength).trigger('click')
-    n++
-},3000)
 
 $('.pictures').on('mouseenter',function(){
     window.clearInterval(autoPlay)
