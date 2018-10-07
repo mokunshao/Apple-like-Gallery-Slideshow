@@ -8,10 +8,11 @@ $('.menus>ul>li').on('click',function(e){
     n = index
 })
 
-let n = 0 
+let n = 0
+let menusLength = $('.menus>ul>li').length
 
-let = autoPlay = setInterval(function(){
-    $('.menus>ul>li').eq(n%$('.menus>ul>li').length).trigger('click')
+let autoPlay = setInterval(function(){
+    $('.menus>ul>li').eq(n%menusLength).trigger('click')
     n++
 },3000)
 
@@ -21,7 +22,7 @@ $('.pictures').on('mouseenter',function(){
 
 $('.pictures').on('mouseleave',function(){
     autoPlay = setInterval(function(){
-        $('.menus>ul>li').eq(n%$('.menus>ul>li').length).trigger('click')
+        $('.menus>ul>li').eq(n%menusLength).trigger('click')
         n++
     },3000)
 })
@@ -31,7 +32,7 @@ $(document).on('visibilitychange',function(){
         window.clearInterval(autoPlay)
     }else if(!document.hidden){
         autoPlay = setInterval(function(){
-            $('.menus>ul>li').eq(n%$('.menus>ul>li').length).trigger('click')
+            $('.menus>ul>li').eq(n%menusLength).trigger('click')
             n++
         },3000)    
     }
