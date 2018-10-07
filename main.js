@@ -1,3 +1,7 @@
+let n = 0
+
+let menusLength = $('.menus>ul>li').length
+
 $('.menus>ul>li').eq(0).addClass('active').siblings().removeClass('active')
 
 $('.menus>ul>li').on('click',function(e){
@@ -7,9 +11,6 @@ $('.menus>ul>li').on('click',function(e){
     $('.pictures>img').css({transform:`translateX(${-920*index}px)`})
     n = index
 })
-
-let n = 0
-let menusLength = $('.menus>ul>li').length
 
 let autoPlay = setInterval(function(){
     $('.menus>ul>li').eq(n%menusLength).trigger('click')
