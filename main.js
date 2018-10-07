@@ -1,6 +1,6 @@
 $('.menus>ul>li').eq(0).addClass('active').siblings().removeClass('active')
 
-let n = 0
+let n = 1
 
 let menusLength = $('.menus>ul>li').length
 
