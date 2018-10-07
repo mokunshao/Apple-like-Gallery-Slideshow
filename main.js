@@ -1,0 +1,38 @@
+$('.menus>ul>li').eq(0).addClass('active').siblings().removeClass('active')
+
+$('.menus>ul>li').on('click',function(e){
+    let current = e.currentTarget
+    let index = $(current).index()
+    $('.menus>ul>li').eq(index).addClass('active').siblings().removeClass('active')
+    $('.pictures>img').css({transform:`translateX(${-920*index}px)`})
+    n = index
+})
+
+let n = 0 
+
+let = autoPlay = setInterval(function(){
+    $('.menus>ul>li').eq(n%$('.menus>ul>li').length).trigger('click')
+    n++
+},3000)
+
+$('.pictures').on('mouseenter',function(){
+    window.clearInterval(autoPlay)
+})
+
+$('.pictures').on('mouseleave',function(){
+    autoPlay = setInterval(function(){
+        $('.menus>ul>li').eq(n%$('.menus>ul>li').length).trigger('click')
+        n++
+    },3000)
+})
+
+$(document).on('visibilitychange',function(){
+    if(document.hidden){
+        window.clearInterval(autoPlay)
+    }else if(!document.hidden){
+        autoPlay = setInterval(function(){
+            $('.menus>ul>li').eq(n%$('.menus>ul>li').length).trigger('click')
+            n++
+        },3000)    
+    }
+})
