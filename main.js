@@ -17,11 +17,11 @@ $('.menus>ul>li').on('click',function(e){
     n = index
 })
 
-$('.pictures').on('mouseenter',function(){
+$('.pictures>img').on('mouseenter',function(){
     window.clearInterval(autoPlay)
 })
 
-$('.pictures').on('mouseleave',function(){
+$('.pictures>img').on('mouseleave',function(){
     autoPlay = setInterval(function(){
         $('.menus>ul>li').eq(n%menusLength).trigger('click')
         n++
