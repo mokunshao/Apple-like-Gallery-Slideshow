@@ -7,7 +7,7 @@ let menusLength = $('.menus>ul>li').length
 let autoPlay = setInterval(function(){
     $('.menus>ul>li').eq(n%menusLength).trigger('click')
     n++
-},3000)
+},5000)
 
 $('.menus>ul>li').on('click',function(e){
     let current = e.currentTarget
@@ -25,7 +25,7 @@ $('.pictures>img').on('mouseleave',function(){
     autoPlay = setInterval(function(){
         $('.menus>ul>li').eq(n%menusLength).trigger('click')
         n++
-    },3000)
+    },5000)
 })
 
 $(document).on('visibilitychange',function(){
@@ -35,6 +35,6 @@ $(document).on('visibilitychange',function(){
         autoPlay = setInterval(function(){
             $('.menus>ul>li').eq(n%menusLength).trigger('click')
             n++
-        },3000)    
+        },5000)    
     }
 })
