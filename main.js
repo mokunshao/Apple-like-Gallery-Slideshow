@@ -1,4 +1,4 @@
-window.onload = function(){
+$( document ).ready(function() {
 
     $('.menus>ul>li').eq(0).addClass('active').siblings().removeClass('active')
 
@@ -40,5 +40,5 @@ window.onload = function(){
             },5000)    
         }
     })
-
-}
+    
+})
